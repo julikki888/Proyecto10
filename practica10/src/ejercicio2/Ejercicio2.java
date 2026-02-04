@@ -21,10 +21,7 @@ public class Ejercicio2 {
 		 
 		
 		//Poner cada cadena a mayusculas
-		for (ListIterator<String> li = miLista.listIterator(); li.hasNext();) {
-			String a = li.next();
-			li = a.toUpperCase();
-		}
+		
 		
 		System.out.println(miLista);
 		
