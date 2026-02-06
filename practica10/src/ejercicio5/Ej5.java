@@ -72,10 +72,14 @@ public class Ej5 {
 		
 		
 		SortedSet<String> clavesLambda = new TreeSet<>(//lo hacemos sin distingir mayus y minus
-				(o1,o2)-> o2.toLowerCase().compareTo(o1.toLowerCase())); 
+				(o1,o2)-> o2.compareToIgnoreCase(o1)); 
 		clavesLambda.addAll(dic.keySet());
 		
-		
+		//• Crea otra colección con los valores del mapa, por ejemplo, en un LinkedList, y ordénalos.
+
+		List<String> dicList = new LinkedList<>(dic.values());
+		dicList.sort((o1,o2)-> o1.compareToIgnoreCase(o2));
+		System.out.println("\n----dicList---------\n"+dicList.toString());
 
 		
 	}
