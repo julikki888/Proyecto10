@@ -1,7 +1,6 @@
 package ejercicio6;
 
-import java.util.Comparator;
-import java.util.LinkedList;
+import java.util.*;
 
 
 public class GrupoV2 extends LinkedList<Alumno> {
