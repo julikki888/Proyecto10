@@ -30,13 +30,13 @@ public class Ej7 {
 		int cont=0;
 		do {
 			System.out.println("CONTADOR---"+cont);
-			if(cadena.charAt(cont)=='-' || cadena.charAt(cont)=='+'||
-					cadena.charAt(cont)=='*'||cadena.charAt(cont)=='/') {
+			if(cadena.charAt(cont)=='-' || cadena.charAt(cont)=='+'|| //Si el caracter es un simbolo se sacan
+					cadena.charAt(cont)=='*'||cadena.charAt(cont)=='/') {//2 numeros y se hace el calculo
 				System.out.println("ola: "+cadena.charAt(cont));
-				aux1 = pila.pop();
-				aux2 = pila.pop();
-				System.out.println("POP1: "+aux1+"  -POP2: "+aux2);
-				syso1=((switch (cadena.charAt(cont)) {
+				aux1 = pila.pop();//sacar primer valor
+				aux2 = pila.pop();//sacar segundo valor
+				System.out.println("POP1: "+aux1+"  -POP2: "+aux2);//mostrar lo que sale de la pila
+				syso1=((switch (cadena.charAt(cont)) {//Hacer un calculo en base al simbolo obtnido
 										case '+' -> {yield aux1+aux2;}
 										case '-' -> {yield aux2-aux1;}
 										case '*' -> {yield aux1*aux2;}
@@ -45,12 +45,12 @@ public class Ej7 {
 										}//fin del switch
 								)//fin del parentesis
 						);//fin del push
-				System.out.println(syso1);
-				pila.push(syso1);
+				System.out.println(syso1);//mostrar el resultado para control de errores
+				pila.push(syso1);//introducir resultado en la pila
 				cont++;
 				}//fin del if
 			else {
-				pila.push(Character.valueOf(cadena.charAt(cont))-48);
+				pila.push(Character.valueOf(cadena.charAt(cont))-48);//introduce un numero a la pila
 				cont++;
 				}
 		}while(pila.size()>0&&cont<cadena.length());
