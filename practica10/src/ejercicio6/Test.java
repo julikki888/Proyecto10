@@ -74,6 +74,14 @@ public class Test{
 		
 		grupoDAW2.sort((o1,o2)->o1.getApellido1().compareTo(o2.getApellido1())!=0?
 						(o1.getApellido1().compareTo(o2.getApellido1())):(o1.getDni().compareTo(o2.getDni())));
+	
+		System.out.println("\nOrden de apellido-dni------------"+grupoDAW2.toString());
+		
+		grupoDAW2.sort((o1,o2)->o2.getFecNac1().compareTo(o1.getFecNac1()));
+		System.out.println("\nOrden de por edad------------"+grupoDAW2.toString());
+
+		
+		
 	}
 
 }
