@@ -13,14 +13,7 @@ public class Ej7 {
 		aritmética escrita en notación postfija e introducida desde teclado. También podéis hacer un algoritmo
 		que compruebe si una cadena está correctamente balanceada en paréntesis.
  */
-		/*
-		 * switch (valor) {
-					case 0,1,2,3,4,5,6 ->{yield (valor+1)+" de ";}
-					case 7-> {yield "sota de ";}
-					case 8-> {yield "caballo de ";}
-					case 9-> {yield "rey de ";}
-					default ->{yield "";}}
-		 */
+
 		
 		Deque<Integer> pila = new ArrayDeque<>();
 		
