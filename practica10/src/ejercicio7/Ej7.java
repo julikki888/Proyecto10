@@ -13,13 +13,49 @@ public class Ej7 {
 		aritmética escrita en notación postfija e introducida desde teclado. También podéis hacer un algoritmo
 		que compruebe si una cadena está correctamente balanceada en paréntesis.
  */
-		Deque<Character> pila = new ArrayDeque<>();
+		/*
+		 * switch (valor) {
+					case 0,1,2,3,4,5,6 ->{yield (valor+1)+" de ";}
+					case 7-> {yield "sota de ";}
+					case 8-> {yield "caballo de ";}
+					case 9-> {yield "rey de ";}
+					default ->{yield "";}}
+		 */
 		
-		String cad="5322*+*76-21*+-";
+		Deque<Integer> pila = new ArrayDeque<>();
 		
-		for(int i = 0; i<cad.length();i++) {
+		String cadena = "5322*+*76-21*+-";
 		
-		}
+		int aux1, aux2, syso1;
+		int cont=0;
+		do {
+			System.out.println("CONTADOR---"+cont);
+			if(cadena.charAt(cont)=='-' || cadena.charAt(cont)=='+'||
+					cadena.charAt(cont)=='*'||cadena.charAt(cont)=='/') {
+				System.out.println("ola: "+cadena.charAt(cont));
+				aux1 = pila.pop();
+				aux2 = pila.pop();
+				System.out.println("POP1: "+aux1+"  -POP2: "+aux2);
+				syso1=((switch (cadena.charAt(cont)) {
+										case '+' -> {yield aux1+aux2;}
+										case '-' -> {yield aux2-aux1;}
+										case '*' -> {yield aux1*aux2;}
+										case '/' -> {yield aux2/aux1;}				
+										default ->{yield '1';}
+										}//fin del switch
+								)//fin del parentesis
+						);//fin del push
+				System.out.println(syso1);
+				pila.push(syso1);
+				cont++;
+				}//fin del if
+			else {
+				pila.push(Character.valueOf(cadena.charAt(cont))-48);
+				cont++;
+				}
+		}while(pila.size()>0&&cont<cadena.length());
+		
+		System.out.println(pila.pop());
 		
 	}
 

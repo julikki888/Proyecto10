@@ -14,12 +14,8 @@ versiones diferentes del ejercicio, una en la que almacenes los libros en un con
 una lista.
 Aquí tienes algunos libros que puedes añadir para hacer las pruebas:*/
 
-		SortedSet<Libro> misLibros = new TreeSet<>((o1,o2)->{//inicio del metodo
-											int a =o1.getAutor().compareToIgnoreCase(o2.getAutor());
-											return a;
-											 	
-										}
-				);//fin del metodo
+		SortedSet<Libro> misLibros = new TreeSet<>((o1,o2)->//inicio del metodo
+											o1.getAutor().compareToIgnoreCase(o2.getAutor()));//fin del metodo
 		
 		misLibros.add(new Libro("María Dueñas","Entre costuras",false));
 		misLibros.add(new Libro("Sarah Lark","En el país de la nube blanca",true));
@@ -33,6 +29,8 @@ Aquí tienes algunos libros que puedes añadir para hacer las pruebas:*/
 	
 		List<Libro> misLibrosList = new LinkedList<Libro>(misLibros);
 		
+		misLibrosList.sort((o1,o2)->//inicio del metodo
+								o1.getAutor().compareToIgnoreCase(o2.getAutor()));
 		
 	}
 
