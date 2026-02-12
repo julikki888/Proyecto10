@@ -48,7 +48,7 @@ public class Ej7 {
 				}
 		}while(pila.size()>0&&cont<cadena.length());
 		
-		System.out.println(pila.pop());
+		System.out.println(pila.peek());
 		
 	}
 
